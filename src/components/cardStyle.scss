@@ -1,0 +1,29 @@
+@import "../variables";
+
+.card {
+    background-color: #EEE;
+    width: $cardWidth;
+    height: $cardHeight;
+    border: $cardBorderWidth solid #999;
+    border-radius: 1rem;
+    color: black;
+    padding: $cardPadding;
+    overflow: hidden;
+
+    .image-container {
+      img {
+        width: 100%;
+        border-radius:1rem;
+    }
+    }
+
+    .information{
+        .title {
+        font-weight: bold;
+        margin: 1rem 0 ;
+        }
+        .description {
+          overflow: hidden;
+        }
+    }
+  }

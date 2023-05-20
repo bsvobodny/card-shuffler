@@ -1,0 +1,37 @@
+@import "./variables";
+
+body {
+    box-sizing:  border-box;
+    background-color: #000;
+    display: grid;
+    place-items: center;
+    height: 100vh;
+    width: 100vw;
+  }
+  .card-template {
+    display: none;
+  }
+
+
+  #card-stack {
+    position: relative;
+    width: calc($cardWidth + 2 * $cardPadding + 6 * 2* $cardBorderWidth);
+    height: calc($cardHeight + 2* $cardPadding + 6 * 2 * $cardBorderWidth);
+    .card{
+      position: absolute;
+      z-index: 1;
+
+      &:nth-child(1) {
+        z-index: 4;
+        transform: translateX(6 * $cardBorderWidth) translateY(6 * $cardBorderWidth);
+      }
+      &:nth-child(2) {
+        z-index: 3;
+        transform: translateX(4 * $cardBorderWidth) translateY(4 * $cardBorderWidth);
+      }
+      &:nth-child(3) {
+        z-index: 2;
+        transform: translateX(2 * $cardBorderWidth) translateY(2 * $cardBorderWidth);
+      }
+    }
+  }

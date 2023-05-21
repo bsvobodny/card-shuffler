@@ -31,6 +31,26 @@ body {
         transform: translateX(2 * $cardBorderWidth) translateY(2 * $cardBorderWidth);
       }
     }
+
+    &.open {
+     .card{
+      transition-duration: 1s;
+
+      transform-origin: bottom right;
+
+        &:nth-child(1) {
+          transform: rotate(15deg) translateX(4 * $cardBorderWidth) translateY(4 * $cardBorderWidth);
+        }
+        &:nth-child(2) {
+          transform:  rotate(10deg) translateX(4 * $cardBorderWidth) translateY(4 * $cardBorderWidth);
+        }
+        &:nth-child(3) {
+          transform:  rotate(5deg) translateX(4 * $cardBorderWidth) translateY(4 * $cardBorderWidth);
+        }
+
+      }
+    }
+    
   }
 
   #shuffle {

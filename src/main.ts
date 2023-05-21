@@ -12,7 +12,7 @@ activities.forEach((activity: Activity) =>
   addCard(document.querySelector<HTMLDivElement>("#card-stack")!, activity)
 );
 
-const shuffleCards = () => {
+const nextCard = () => {
   const cards = document.querySelectorAll<HTMLDivElement>(`#card-stack .card`);
   const lastItem = cards[cards.length - 1];
   const newFirstItem = lastItem.cloneNode(true);
@@ -25,7 +25,12 @@ const shuffleCards = () => {
 };
 
 setupButton(document.querySelector<HTMLDivElement>("#shuffle")!, async () => {
+  document.querySelector<HTMLDivElement>("#card-stack")!.classList.remove('open');
+  await new Promise((resolve) => {
+  setTimeout(resolve, 200);
+  });
   for (let i = 0; i < Math.round(Math.random() * 100); i++) {
-    await shuffleCards();
+    await nextCard();
   }
+  document.querySelector<HTMLDivElement>("#card-stack")!.classList.add('open');
 });

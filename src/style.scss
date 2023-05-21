@@ -8,10 +8,6 @@ body {
     height: 100vh;
     width: 100vw;
   }
-  .card-template {
-    display: none;
-  }
-
 
   #card-stack {
     position: relative;
@@ -20,6 +16,7 @@ body {
     .card{
       position: absolute;
       z-index: 1;
+      transition: all 0.2s ease-in-out;
 
       &:nth-child(1) {
         z-index: 4;
@@ -34,4 +31,8 @@ body {
         transform: translateX(2 * $cardBorderWidth) translateY(2 * $cardBorderWidth);
       }
     }
+  }
+
+  #shuffle {
+    text-align: center;
   }
